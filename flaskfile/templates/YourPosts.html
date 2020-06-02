@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	Your posts
+{% endblock %}
+
+{% block content %}
+	<div class='content-section'>
+		<fieldset class="form-group">
+			<legend class="border-bottom mb-4">My Posts</legend>
+			<div class="form-group">
+			{% for postss in posts %}
+				<div class="card">
+					<div class="card-header">
+						uploaded by <a href="#">{{postss.author.username}}</a> in {{postss.date_posted.strftime('%Y-%m-%d')}}
+						<a href={{url_for('post_update', post_id=postss.id)}} class='btn btn-info'>Update</a>
+						<a href={{url_for('post_delete', post_id=postss.id)}} class='btn btn-danger'>Delete</a>
+					</div>
+					<div class=card-body>
+						<h5 class='card-title'>{{postss.title}}</h5>
+						<p class='card-text'>{{postss.content}}</p>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+		{% endfor %}
+{% endblock %}

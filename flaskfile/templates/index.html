@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+	Comment Section
+{% endblock %}
+
+{% block content %}
+	<div class="content-section">
+		<form action="" method="post">
+			{{form.hidden_tag()}}
+			<fieldset class="form-group" >
+				<legend class="border-bottom mb-4">Add a New Post</legend>
+				<div class="form-group">
+					{{form.title.label(class="form-control-label")}}
+					{% if form.title.errors %}
+						{{form.title(class="form-control form-control-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.title.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{form.title(class="form-control form-control-lg")}}
+					{% endif %}
+				</div>
+				<div class="form-group" >
+					{{form.content.label (class="form-control-label")}}
+					{% if form.content.errors %}
+						{{form.content(class="form-control form-control-lg is-invalid")}}
+						<div class="invalid-feedback">
+							{% for error in form.content.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{form.content(class="form-control form-control-lg")}}
+					{% endif %}
+				</div>
+			</fieldset>
+			<div class="form-group" >
+				{{form.submit(class="btn btn-outline-info")}}
+			</div>
+		</form>
+	</div>
+	{% for postss in posts %}
+			<div class="card">
+				<div class="card-header">
+					uploaded by <a href="#">{{postss.author.username}}</a> in {{postss.date_posted.strftime('%Y-%m-%d')}}
+					{% if postss.author.username == current_user.username  or current_user.username == 'Ali'%}
+						{% if current_user.username == 'Ali' %}
+							{% if postss.author.username == 'Ali' %}
+								<a href={{url_for('post_update', post_id=postss.id)}} class='btn btn-info'>update</a>
+								<a href={{url_for('post_delete', post_id=postss.id)}} class='btn btn-danger'>Delete</a>
+							{% else %}
+								<a href={{url_for('post_delete', post_id=postss.id)}} class='btn btn-danger'>Delete/mute</a>
+							{% endif %}
+						{% else %}
+							<a href={{url_for('post_update', post_id=postss.id)}} class='btn btn-info'>Update</a>
+							<a href={{url_for('post_delete', post_id=postss.id)}} class='btn btn-danger'>Delete</a>
+						{% endif %}
+					{% endif %}
+				</div>
+				<div class=card-body>
+					<h5 class='card-title'>{{postss.title}}</h5>
+					<p class='card-text'>{{postss.content}}</p>
+				</div>
+			</div>
+	{% endfor %}
+{% endblock %}
+

@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% block title %}
+	Python tkinter
+{% endblock %}
+{% block content %}
+	<div class='embed-responsive embed-responsive-21by9'>
+		<iframe src="https://www.youtube.com/embed/WAOO4P9w9vc" class='embed-responsive-item'></iframe>
+	</div>
+	<div class='content-section'>
+
+		<fieldset class="form-group">
+			<legend class="border-bottom mb-4">Text Based-Explanation</legend>
+				<h1>Tkinter episode 1: basic hello world program</h1>
+				<a class="btn btn-info" href="/static/pics/python.jpg" download='test'>Download</a>
+		</fieldset>
+	</div>
+	<div>
+		<p>First You must import tkinter with this statement.</p>
+	</div>
+	<div class='card'>
+		<div class="card-body">
+			<p>from tkinter import *</p>
+		</div>
+	</div>
+	<div>
+		<p>Then you must create the window by refering to this Attribute of tkinter(Tk).</p>
+	</div>
+	<div class='card'>
+		<div class="card-body">
+			<p>from tkinter import *</p>
+			<p>window = Tk()</p>
+		</div>
+	</div>
+	<div>
+		<p>Then you can try yourself, and then you can see that the window does'nt appear.</p>
+		<p>Thats likely because, You have created the window but did not run it.</p>
+		<p>So, For running it, You can add this statement with the attribute at the last(mainloop).</p>
+	</div>
+	<div class='card'>
+		<div class="card-body">
+			<p>from tkinter import *</p>
+			<p>window = Tk()</p>
+			<p>window.mainloop()</p>
+		</div>
+	</div>
+	<div>
+		<p>Now you can see that your window will appear.</p>
+	</div>
+	<div class="card">
+		<img src="/static/pics/tkinterwindow.png">
+	</div>
+	<div>
+		<p>Now we will add some contents/widgets in the MainWindow.</p>
+		<p>our first widget will be a label(text).</p>
+		<p>for That, you can first create the label</p>
+		<p>if you try to remember,  that in the first we created the window and made it run, as the same here, we need it to be visible.</p>
+		<p>Displaying text is the main function of it, so I passed in text in it(Label).</p>
+		<p>So, after creating that Label, We can add this attribute(pack) to it.</p>
+	</div>
+	<div class="card">
+		<p>from tkinter import *</p>
+		<p>window = Tk()</p>
+		<p>window.mainloop()</p>
+
+		<p># widgets go here....</p>
+		<p># remember that for craeting the Label, first parameter it takes is, where to create, i.e. the Window you created.</p>
+		<p># other all parameters are optional.</p>
+		<p>label = Label(window, text='This is a Label')</p>
+		<p># We will now pack it.</p>
+		<p>label.pack()</p>
+	</div>
+	<div>
+		<p>Tutorial ends here, And so I will be uploading more tutorials, so be tuned about later tutorials by subscribing to my channel.</p>
+	</div>
+	<div>
+		<h1>Note: The video I provided in this tutorial is actually in the language of Hindi.</h1>
+	</div>
+{% endblock %}
