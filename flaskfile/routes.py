@@ -9,6 +9,7 @@ from flask_login import login_user, current_user, logout_user,login_required
 @app.route('/comments', methods=['GET', 'POST'])
 @login_required
 def feedback():
+	global link_data
 	posts = Post.query.all()
 	form = new_post()
 	if form.validate_on_submit():
@@ -16,7 +17,7 @@ def feedback():
 		db.session.add(post)
 		db.session.commit()
 		flash('post has been successfully uploaded', 'success')
-		return redirect(url_for('feedback'))
+		return render_template('index.html', posts=posts, form=form)
 	return render_template('index.html', posts=posts, form=form)
 
 
@@ -127,7 +128,7 @@ def post_delete(post_id):
 
 @app.route('/home/tkintertutorials/FirstProgram')
 def video():
-	return render_template('simple.html')
+	return render_template('tkinter1.html')
 
 @app.route('/YourPosts')
 @login_required
@@ -139,4 +140,5 @@ def YourPosts():
 @app.route('/home/tkintertutorials')
 def tkintertuts():
 	return render_template('tkinter.html')
+
 

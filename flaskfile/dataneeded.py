@@ -45,3 +45,4 @@ class new_post(FlaskForm):
 	title = StringField('Title', validators=[DataRequired()])
 	content = TextAreaField('Content', validators=[DataRequired()])
 	submit = SubmitField('Add Post')
+
