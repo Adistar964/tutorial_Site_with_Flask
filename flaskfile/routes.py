@@ -19,9 +19,6 @@ def feedback():
 		return redirect(url_for('feedback'))
 	return render_template('index.html', posts=posts, form=form)
 
-app.route('/home/tkintertutorials')
-def tkintertut():
-	return render_template('tkinter.html')
 
 @app.route('/home')
 @app.route('/')
@@ -138,4 +135,8 @@ def YourPosts():
 	posts = Post.query.filter_by(author=current_user).all()
 	if posts:
 		return render_template('YourPosts.html', posts=posts)
+
+@app.route('/home/tkintertutorials')
+def tkintertuts():
+	return render_template('tkinter.html')
 
