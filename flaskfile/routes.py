@@ -128,7 +128,7 @@ def post_delete(post_id):
 	return redirect(url_for('feedback'))
 
 
-@app.route('/home/pythontkinter')
+@app.route('/home/tkintertutorials/FirstProgram')
 def video():
 	return render_template('simple.html')
 
