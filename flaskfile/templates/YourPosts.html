@@ -12,7 +12,11 @@
 			{% for postss in posts %}
 				<div class="card">
 					<div class="card-header">
-						uploaded by <a href="#">{{postss.author.username}}</a> in {{postss.date_posted.strftime('%Y-%m-%d')}}
+						{% if post.author == current_user %}
+							<a href="#">Me</a> in {{postss.date_posted.strftime('%Y-%m-%d')}}
+						{% else %}
+							<a href="#">{{postss.author.username}}</a> in {{postss.date_posted.strftime('%Y-%m-%d')}}
+						{% endif %}
 						<a href={{url_for('post_update', post_id=postss.id)}} class='btn btn-info'>Update</a>
 						<a href={{url_for('post_delete', post_id=postss.id)}} class='btn btn-danger'>Delete</a>
 					</div>
