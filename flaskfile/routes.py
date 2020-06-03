@@ -19,11 +19,12 @@ def feedback():
 		return redirect(url_for('feedback'))
 	return render_template('index.html', posts=posts, form=form)
 
+@app.route('/home')
 @app.route('/')
 def homepage():
 	return render_template('home.html')
 
-app.route('/tkintertutorials')
+app.route('/home/tkintertutorials')
 def tkinter():
 	return render_template('tkinter.html')
 
