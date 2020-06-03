@@ -23,6 +23,10 @@ def feedback():
 def homepage():
 	return render_template('home.html')
 
+app.route('/tkintertutorials')
+def tkinter():
+	return render_template('tkinter.html')
+
 
 @app.route('/register', methods=['POST', 'GET'])
 def register():
