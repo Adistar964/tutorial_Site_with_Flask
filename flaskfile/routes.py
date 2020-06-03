@@ -20,7 +20,7 @@ def feedback():
 	return render_template('index.html', posts=posts, form=form)
 
 app.route('/home/tkintertutorials')
-def tkinter():
+def tkintertut():
 	return render_template('tkinter.html')
 
 @app.route('/home')
