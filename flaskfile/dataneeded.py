@@ -25,7 +25,7 @@ class Register(FlaskForm):
 class Login(FlaskForm):
 	username = StringField('Username',validators=[DataRequired(), Length(min=3, max=20)])
 	password = PasswordField('Password', validators=[DataRequired()])
-	forgot = BooleanField('Forgot Password?')
+	forgot = BooleanField('Cookies')
 	submit = SubmitField('Sign in')
 
 class update(FlaskForm):
