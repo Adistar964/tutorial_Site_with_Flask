@@ -130,12 +130,19 @@ def post_delete(post_id):
 def video():
 	return render_template('tkinter1.html')
 
+@app.route('/home/tkintertutorials/Buttons')
+def tkinterbuttons():
+	return render_template('tkinter2.html')
+
+
 @app.route('/YourPosts')
 @login_required
 def YourPosts():
 	posts = Post.query.filter_by(author=current_user).all()
 	if posts:
 		return render_template('YourPosts.html', posts=posts)
+	else:
+		return render_template('nopost.html')
 
 @app.route('/home/tkintertutorials')
 def tkintertuts():
