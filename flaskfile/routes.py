@@ -130,6 +130,10 @@ def post_delete(post_id):
 def video():
 	return render_template('tkinter1.html')
 
+@app.route('/home/tkintertutorials/ButtonTutorial')
+def button():
+	return render_template('button.html')
+
 @app.route('/home/tkintertutorials/Buttons')
 def tkinterbuttons():
 	return render_template('tkinter2.html')

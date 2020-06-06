@@ -3,12 +3,24 @@
 	tkinter tutorials
 {% endblock %}
 {% block content %}
-	<div class="card" style="width:18rem;">
-		<img src='/static/pics/python.jpg' class='card-img-top' alt="Card image cap">
-		<div class="card-body">
-			<h1 class="card-title">Basic Hello World Program</h1>
-			<p class="card-text">This will show you how to make very basic hello world program.</p>
-			<a href={{url_for('video')}} class="btn btn-outline-info">Lets Go</a>
+	<div class="container">
+		<div class="row">
+			<div class="card" style="width:18rem;">
+				<img src='/static/pics/python.jpg' class='card-img-top' alt="Card image cap">
+				<div class="card-body">
+					<h1 class="card-title">Basic Hello World Program</h1>
+					<p class="card-text">This will show you how to make very basic hello world program.</p>
+					<a href={{url_for('video')}} class="btn btn-outline-info">Lets Go</a>
+				</div>
+			</div>
+			<div class="card" style="width:18rem;">
+				<img src='/static/pics/python.jpg' class='card-img-top' alt="Card image cap">
+				<div class="card-body">
+					<h1 class="card-title">Buttons</h1>
+					<p class="card-text">This will show you how to make very buttons with their press events.</p>
+					<a href={{url_for('button')}} class="btn btn-outline-info">Lets Go</a>
+				</div>
+			</div>
 		</div>
 	</div>
 {% endblock %}

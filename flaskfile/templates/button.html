@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+{% block title %}
+	How to make buttons in tkinter
+{% endblock %}
+{% block content %}
+	<div class='embed-responsive embed-responsive-21by9'>
+		<iframe src="https://www.youtube.com/embed/qLBHo7T5QAo" class='embed-responsive-item'></iframe>
+	</div>
+	<div class='content-section'>
+
+		<fieldset class="form-group">
+			<legend class="border-bottom mb-4">Text Based-Explanation</legend>
+				<h1>Tkinter episode 2: Buttons</h1>
+				<a class="btn btn-info" href="/static/pics/python.jpg" download='test'>Download</a>
+		</fieldset>
+	</div>
+	<div>
+		<p>If you were following from last tutorial then you must know what I am doing.</p>
+		<p>As the same, for creating any widget, you must write its name(in this case, Button), and give the parameters.</p>
+		<p>First parameter as usual is window and second parameter I gave is for text(which will display text in the button).</p>
+	</div>
+	<div class='card'>
+		<div class="card-body">
+			<p>from tkinter import *</p>
+			<p>window = Tk()</p>
+			<p>window.mainloop()</p>
+
+			<p># widgets go here....</p>
+			<p># remember that for creating the Widgets, first parameter it takes is, where to create, i.e. the Window you created.</p>
+			<p># other all parameters are optional.</p>
+			<p>label = Label(window, text='This is a Label')</p>
+			<p>button = Button(window, text='click me')</p>
+			<p># We will now pack it.</p>
+			<p>label.pack()</p>
+			</div>
+	</div>
+	<div>
+		<p>After that, your window must look something like this with the button.</p>
+	</div>
+	<div class='card'>
+		<div class="card-body">
+			<img src="\static\pics\buttontkinter.png">
+		</div>
+	</div>
+	<div>
+		<p>Now, thats simply a button.You can add its press events by adding the command parameter to the Button.</p>
+		<p>But, for that you have create the function that does some functions if the button is clicked.</p>
+		<p>And now, I will name that function 'button_func'.</p>
+		<p>In that function I will create a label, so whenever button gets pressed, then the label will be created.</p>
+	</div>
+	<div class='card'>
+		<div class="card-body">
+			<p>def button_func():</p>
+			<p>    new_label = Label(window, text='You clicked the button.')</p>
+			<p>    new_label.pack()</p>
+		</div>
+	</div>
+	<p>And now specify that function for the command parameter that we gave to our button.</p>
+	<div class='card'>
+		<div class="card-body">
+			<p>from tkinter import *</p>
+			<p>window = Tk()</p>
+			<p>window.mainloop()</p>
+
+			<p># widgets go here....</p>
+			<p># remember that for creating the Widgets, first parameter it takes is, where to create, i.e. the Window you created.</p>
+			<p># other all parameters are optional.</p>
+			<p>label = Label(window, text='This is a Label')</p>
+			<p># Now you see that wee have that command attribuet added there.</p>
+			<p>button = Button(window, text='click me', command=button_func)</p>
+			<p># We will now pack it.</p>
+			<p>label.pack()</p>
+			</div>
+		</div>
+	<div>
+		<p>Tutorial ends here, And so I will be uploading more tutorials, so be tuned about later tutorials by subscribing to my channel.</p>
+	</div>
+	<div>
+		<h1>Note: The video I provided in this tutorial is actually in the language of Hindi.</h1>
+	</div>
+{% endblock %}
