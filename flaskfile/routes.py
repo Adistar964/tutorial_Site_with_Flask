@@ -132,11 +132,8 @@ def video():
 
 @app.route('/home/tkintertutorials/ButtonTutorial')
 def button():
+	string ='    '
 	return render_template('button.html')
-
-@app.route('/home/tkintertutorials/Buttons')
-def tkinterbuttons():
-	return render_template('tkinter2.html')
 
 
 @app.route('/YourPosts')
